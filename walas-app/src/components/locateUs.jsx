@@ -14,20 +14,20 @@ const horario =[{
 
 function locateUs() {
     return (
-        <div className='bg-slate-100 max-w-screen-2xl py-10 sm:py-5 px-10 mx-auto flex justify-center items-center shadow-2xl rounded-3xl '>
+        <div className='bg-slate-100 max-w-screen-xl py-10 sm:py-5 px-10 mx-auto flex justify-center items-center shadow-2xl rounded-3xl'>
             <div>
                 <div className='mx-auto max-w-full lg:mx-0'>
-                    <h2 className='text-4xl font-semibold tracking-tight text-pretty text-center text-gray-900 sm:text-5xl my-3'>
+                    <h2 className='text-3xl font-semibold tracking-tight text-pretty text-center text-gray-900 sm:text-4xl my-3'>
                         Ubicanos en
                     </h2>
                 </div>
 
                 <article className='flex'>
-                    <div className='flex-flow-col lg:flex lg:justify-center'>
-                    <div>
-                        <img src="./personal/veterinaria.png" alt="" className='mx-auto rounded-3xl' />
+                    <div className='flex-flow-col lg:flex lg:justify-center my-3'>
+                    <div className='flex justify-center'>
+                        <img src="./personal/veterinaria.png" alt="" className='h-[400px] max-w-screen-md rounded-3xl shadow-lg'/>
                     </div>
-                    <div className='text-gray-600 my-3 xl:text-justify sm:mx-20 sm:text-center text-2xl tracking-tight font-semibold content-center'>
+                    <div className='text-gray-800 my-3 xl:text-justify sm:mx-20 sm:text-center text-2xl tracking-tight font-semibold content-center'>
                     <h3 className='my-2'>Av. Terranova, Porlamar 6301, Nueva Esparta</h3>
                     <h3>Horarios De:</h3>
                     {horario.map((horario) => (

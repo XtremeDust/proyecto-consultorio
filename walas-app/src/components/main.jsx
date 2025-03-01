@@ -31,7 +31,7 @@ function main() {
                 </div>
             </section>
 
-            <section className='ubicanos  bg-slate-400 p-5 mb-5 rounded'>
+            <section className='ubicanos p-5 mb-5 rounded'>
                 <div>
                     <Ubicanos/>
                 </div>

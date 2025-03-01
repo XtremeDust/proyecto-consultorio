@@ -26,10 +26,10 @@ function personal() {
                     className='bg-white flex my-8 rounded-3xl mx-auto max-w-screen-xl sm:flex-col sm:flex sm:justify-center shadow-xl'>
                         <div className='md:flex flex-flow-col'>
 
-                            <img src={persona.img} alt="" className='rounded-3xl w-screen h-72 md:h-[300px] md:w-[300px]' />
+                            <img src={persona.img} alt="" className='rounded-3xl max-w-screen h-62 md:h-[300px] md:w-[300px]' />
 
                             <div className='content-center mx-5'>
-                                <h4 className='text-4xl font-semibold tracking-tight text-pretty lg:text-center text-gray-900 sm:text-5xl'>{persona.name}</h4>
+                                <h4 className='mt-1 text-4xl font-semibold tracking-tight text-pretty lg:text-center text-gray-900 sm:text-5xl'>{persona.name}</h4>
                                 <h3 className="my-1 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 sm:text-2xl">
                                     <div>
                                         {persona.profesion}
