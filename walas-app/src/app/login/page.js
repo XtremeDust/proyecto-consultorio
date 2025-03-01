@@ -7,6 +7,7 @@ export default function login() {
     <div className="grid min-h-screen grid-rows-[auto,1fr,auto]">
       <Nav/>
       <main>
+        
       </main>
       <Footer/>
     </div>
