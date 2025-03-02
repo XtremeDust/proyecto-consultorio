@@ -18,26 +18,31 @@ const persona = [{
 
 function personal() {
     return (
-        <div className='rounded-3xl flex justify-center text-center'>
-            <div>
+        <div className='flex justify-center text-center px-5'>            
+            <div className='max-w-screen-lg w-full'>
+                <h3 className='text-4xl font-semibold text-black sm:text-5xl mb-10'>
+                    consultas con especilistas
+                </h3>
+
                 {persona.map((persona) => (
                     <article
                      key={persona.id}
-                    className='bg-white flex my-8 rounded-3xl mx-auto max-w-screen-xl sm:flex-col sm:flex sm:justify-center shadow-xl'>
-                        <div className='md:flex flex-flow-col'>
+                    className='bg-white flex flex-col md:flex-row my-8 rounded-3xl mx-auto shadow-xl overflow-hidden'>
+                        
+                        <div className='md:w-1/3'>
 
-                            <img src={persona.img} alt="" className='rounded-3xl max-w-screen h-62 md:h-[300px] md:w-[300px]' />
-
-                            <div className='content-center mx-5'>
-                                <h4 className='mt-1 text-4xl font-semibold tracking-tight text-pretty lg:text-center text-gray-900 sm:text-5xl'>{persona.name}</h4>
-                                <h3 className="my-1 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 sm:text-2xl">
+                            <img src={persona.img} alt="{persona.name}" className='h-full w-full object-cover rounded-l-3xl md:rounded-none' />
+                            </div>
+                            <div className='md:w-2/3 flex flex-col justify-center p-6'>
+                                <h4 className='text-2xl font-semibold text-gray-900 sm:text-4xl'>{persona.name}</h4>
+                                <h3 className="text-lg font-medium text-gray-700 sm:text-xl mt-2">
                                     <div>
                                         {persona.profesion}
                                     </div>
                                 </h3>
-                                <p className=' text-gray-900 my-5'>{persona.especilidad}</p>
+                                <p className=' text-gray-600 mt-4'>{persona.especilidad}</p>
                             </div>
-                        </div>
+                       
 
                     </article>
                 ))}

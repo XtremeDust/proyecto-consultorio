@@ -48,7 +48,7 @@ const Carouself = () => {
                         <img
                             src={image}
                             alt={`Slide ${index + 1}`}
-                            className="w-full max-w-full mx-auto h-[800px] object-cover rounded-3xl"
+                            className="w-full max-w-full xl:h-[800px] h-full  object-cover rounded-s-3xl"
                         />
                     </div>
                 ))}

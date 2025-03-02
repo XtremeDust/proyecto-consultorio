@@ -7,7 +7,7 @@ export default function register() {
   return (
     <div className="grid min-h-screen grid-rows-[auto,1fr,auto]">
       <Nav/>
-      <main>
+      <main className='content-center'>
       <div className='py-16 sm:py-16 mx-10'>
         <Registro/>
         </div>
