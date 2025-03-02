@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from "@/components/nav";
 import Footer from "@/components/footer"
-import Registro from "@/components/registro"
+import Registro from "@/components/register/registro"
 
 export default function register() {
   return (

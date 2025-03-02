@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from "@/components/nav";
 import Footer from "@/components/footer"
-import Login from "@/components/sesion"
+import Login from "@/components/login/sesion"
 
 export default function login() {
   return (

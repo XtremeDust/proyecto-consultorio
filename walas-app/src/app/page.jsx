@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Nav from "@/components/nav";
-import Main from "@/components/main"
+import Main from "@/components/main/main"
 import Footer from "@/components/footer"
 
 export default function Home() {

@@ -1,9 +1,9 @@
 import React from 'react'
-import Carousel from "@/components/carousel"
-import Services from "@/components/services"
-import Personal from "@/components/personal"
-import Consulta from "@/components/consultas"
-import Ubicanos from "@/components/locateUs"
+import Carousel from "@/components/main/carousel"
+import Services from "@/components/main/services"
+import Personal from "@/components/main/personal"
+import Consulta from "@/components/main/consultas"
+import Ubicanos from "@/components/main/locateUs"
 
 function main() {
     return (

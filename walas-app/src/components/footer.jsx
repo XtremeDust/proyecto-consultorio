@@ -11,9 +11,9 @@ function footer() {
 
                 <div>
                     <ul className="redes flex p-1 items-center justify-center">
-                        <li className='m-5'><a href=""><img src="./facebook.png" className='h-[60px]' alt="Pet cap center Logo" /></a></li>
-                        <li className='m-5'><a href=""></a><img src="./instagram.png" className='h-[63px]' alt="Pet cap center Logo" /></li>
-                        <li className='m-5'><a href=""></a><img src="./twitter.png" className='h-[60px]' alt="Pet cap center Logo" /></li>
+                        <li className='m-5 cursor-pointer'><a href="#" ><img src="./facebook.png" className='h-[60px]' alt="Facebook" /></a></li>                    
+                        <li className='m-5 cursor-pointer'><a href="#" ><img src="./instagram.png" className='h-[63px]' alt="Intagram" /></a></li>
+                        <li className='m-5 cursor-pointer'><a href="#" ><img src="./twitter.png" className='h-[60px]' alt="x" /></a></li>
                     </ul>
                 </div>
 
