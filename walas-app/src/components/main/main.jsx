@@ -14,25 +14,25 @@ function main() {
             </section>
 
             <section className='serves mx-auto rounded '>
-                <div>
+                <div id='servicios'>
                   <Services/>
                 </div>
             </section>
 
             <section className='equipo p-5 mb-5 rounded '>
-                <div>
+                <div id='personal'>
                     <Personal/>
                 </div>
             </section>
 
             <section className='citas bg-slate-200 max-h-screen p-5 mb-5 rounded-2xl shadow-sm'>
-                <div>
+                <div id='consulta'>
                     <Consulta/>
                 </div>
             </section>
 
             <section className='ubicanos p-5 mb-5 rounded'>
-                <div>
+                <div id='ubicacion'>
                     <Ubicanos/>
                 </div>
             </section>
