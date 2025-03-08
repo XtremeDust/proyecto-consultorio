@@ -1,4 +1,5 @@
-import React from 'react'
+"use client";
+import React, { useState } from 'react';
 
 const nav = [{
     id: "1",
@@ -19,47 +20,124 @@ const nav = [{
     link: "#"
 }]
 
+const buttones = [{
+    id:"1",
+    nombre:"Sign In",
+    link: "#",
+},
+{
+    id:"2",
+    nombre:"Sign Up",
+    link: "#",
+}
+]
+
 export default function footer() {
+    const [abrir, setAbrir] = useState(false);
+    const menu = () => {
+        setAbrir(!abrir);
+    };
+
     return (
         <nav className="bg-[#2C3930] border-gray-200 dark:border-gray-700">
-            <div className='max-w-screen flex flex-wrap mx-auto dark:bg-green-900 items-center justify-between p-2 '>
-
-                <a href="#" className='flex items-center space-x-3'>
-                    <img src="./Logo_Pet_Care_Center.png" className='h-[80px]' alt="Pet cap center Logo" />
-
-                    <span className='self-center text-2xl font-semibold '>Pet cap center</span>
+            {/* Contenedor Principal */}
+            <div className="max-w-screen flex flex-wrap items-center justify-between mx-auto p-2 dark:bg-green-900">
+                {/* Logo */}
+                <a href="#" className="flex items-center space-x-3">
+                    <img
+                        src="./Logo_Pet_Care_Center.png"
+                        className="h-[80px]"
+                        alt="Logo de Pet Care Center"
+                    />
+                    <span className="text-2xl font-semibold">Pet Care Center</span>
                 </a>
 
-                <div className="hidden w-full xl:block md:w-auto ">
-                    <ul className='font-semibold flex flex-col p-4 md:flex-row md:space-x-8 md:mt-0 md:border-0'>
-                     {nav.map((nav)=>(
-                        <li>
-                            <a href={nav.link} id={nav.id} className='px-4 py-2 rounded-lg hover:bg-green-800 flex items-center justify-center hover:shadow-sm transition delay-75 ease-in-out hover:-translate-y-1'>{nav.Titulo}</a>
-                        </li>
-                     ))}
-
+                {/* Menú Principal */}
+                <div className="hidden w-full xl:block md:w-auto">
+                    <ul className="flex flex-col p-4 space-y-4 md:flex-row md:space-y-0 md:space-x-8 font-semibold">
+                        {nav.map((item) => (
+                            <li key={item.id}>
+                                <a
+                                    href={item.link}
+                                    className="flex items-center justify-center px-4 py-2 text-white transition-transform duration-200 ease-in-out bg-transparent rounded-lg hover:bg-green-800 hover:shadow-md hover:-translate-y-1"
+                                >
+                                    {item.Titulo}
+                                </a>
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
-                <div className="mr-[5px] ml-[5px] hidden gap-4 items-center md:flex ">
-                    <a className='shadow-xl rounded-full border border-solid border-black/[.08] dark:border-white/[.145]  flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-36 transition delay-200 ease-in-out hover:-translate-y-1' href="#">Sing In</a>
-                    <a className='shadow-xl rounded-full border border-solid border-transparent flex items-center justify-center bg-foreground text-black/[.80] gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-40 transition delay-200 ease-in-out hover:-translate-y-1' href="#">Sing Up</a>
-                </div>
+                {/* Botones de Usuario y Menú desplegable */}
+                <div className="flex items-center">
 
-  
-            </div>
-            <div className="xl:hidden" id="mobile-menu">
-    <div className="space-y-1 md:flex justify-between px-2 pt-2 pb-3">
-     {nav.map((nav)=>(
-      <a id={nav.id} href={nav.link} className=" text-start block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">{nav.Titulo}</a>  
-     ))}
-            <div className="mr-[5px] ml-[5px] gap-4 items-center hidden sm:flex">
-                    <a className='shadow-xl rounded-full border border-solid border-black/[.08] dark:border-white/[.145]  flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-36 transition delay-200 ease-in-out hover:-translate-y-1' href="#">Sing In</a>
-                    <a className='shadow-xl rounded-full border border-solid border-transparent flex items-center justify-center bg-foreground text-black/[.80] gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-40 transition delay-200 ease-in-out hover:-translate-y-1' href="#">Sing Up</a>
+                    {/* Botón despliegue */}
+                    <button
+                        onClick={menu} // Controla el estado del menú desplegable
+                        className="flex items-center p-2 rounded-3xl cursor-pointer group md:hidden"
+                        aria-expanded={abrir} // Accesibilidad para indicar el estado del menú
+                    >
+                        <div className="space-y-2">
+                            <span
+                                className={`block w-10 h-1 bg-white rounded-full transition-transform duration-300 ease-in-out ${abrir ? "translate-y-1.5 rotate-45" : ""
+                                    }`}
+                            ></span>
+                            <span
+                                className={`block w-8 h-1 bg-white rounded-full transition-transform duration-300 ease-in-out ${abrir ? "-translate-y-1.5 -rotate-45 w-10" : ""
+                                    }`}
+                            ></span>
+                        </div>
+                    </button>
+
+                    {/* Botones */}
+                    <div className="hidden items-center gap-4 md:flex">
+                        <a href="#" className="flex items-center justify-center px-4 py-2 text-sm transition-transform duration-200 ease-in-out bg-transparent border border-solid rounded-full shadow-xl sm:px-5 sm:h-12 sm:text-base sm:min-w-[9rem] dark:border-white/[0.145] hover:bg-gray-800 hover:border-transparent hover:-translate-y-1">
+                            Sign In
+                        </a>
+                        <a href="#" className="flex items-center justify-center px-4 py-2 text-sm transition-transform duration-200 ease-in-out text-black/[0.80] bg-foreground gap-2 rounded-full shadow-xl sm:px-5 sm:h-12 sm:text-base sm:min-w-[10rem] hover:bg-gray-600 dark:hover:bg-gray-300 hover:-translate-y-1">
+                            Sign Up
+                        </a>
+                    </div>
                 </div>
-    </div>
-  </div>
+            </div>
+
+            {/* sub-menu */}
+            <nav className="bg-white hidden md:block xl:hidden">
+                <div className="max-w-screen-xl px-4 py-3 mx-auto">
+                    <div className="flex items-center">
+                        <ul className="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">
+                            {nav.map((item) => (
+                                <li key={item.id}>
+                                    <a href={item.link} className=" flex items-center justify-center px-4 py-2 text-sm transition-transform duration-200 ease-in-out text-black/[0.80]  rounded-lg hover:shadow-md hover:bg-green-800 hover:text-white hover:-translate-y-1" aria-current="page">
+                                        {item.Titulo}
+                                    </a>
+                                </li>
+                            ))}
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            {/* Menú desplegable */}
+            <div
+                className={`flex flex-col justify-evenly px-2 pt-2 pb-1 md:pb-3 space-y-1 bg-white  transition-all duration-300 ease-in-out md:hidden ${abrir ? "block" : "hidden"
+                    }`}
+                id="desplegable-menu"
+            >
+                {nav.map((item) => (
+                    <a key={item.id} href={item.link} className="block px-3 py-2 text-base font-medium text-gray-900 bg-white hover:bg-green-800 hover:text-white rounded-md">
+                        {item.Titulo}
+                    </a>
+                ))}
+                <div className="flex flex-col justify-between space-y-1">
+                    {buttones.map((item)=>(
+                    <a href={item.link} key={item.id} className="block px-3 py-2 text-base font-medium text-gray-900 bg-white rounded-md hover:bg-green-800 hover:text-white"> {item.nombre} </a>
+                    ))}
+                </div>
+            </div>
         </nav>
+
 
     )
 }
