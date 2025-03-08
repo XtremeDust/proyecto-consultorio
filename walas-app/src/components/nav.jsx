@@ -41,22 +41,22 @@ export default function footer() {
                     </ul>
                 </div>
 
-                <div className="mr-[5px] ml-[5px] flex gap-4 items-center flex-col sm:flex-row">
+                <div className="mr-[5px] ml-[5px] hidden gap-4 items-center md:flex ">
                     <a className='shadow-xl rounded-full border border-solid border-black/[.08] dark:border-white/[.145]  flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-36 transition delay-200 ease-in-out hover:-translate-y-1' href="#">Sing In</a>
                     <a className='shadow-xl rounded-full border border-solid border-transparent flex items-center justify-center bg-foreground text-black/[.80] gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-40 transition delay-200 ease-in-out hover:-translate-y-1' href="#">Sing Up</a>
                 </div>
 
   
             </div>
-            <div class="sm:hidden" id="mobile-menu">
-    <div class="space-y-1 px-2 pt-2 pb-3">
-     {nav.map()
-
-     }
-      <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Dashboard</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
+            <div className="xl:hidden" id="mobile-menu">
+    <div className="space-y-1 md:flex justify-between px-2 pt-2 pb-3">
+     {nav.map((nav)=>(
+      <a id={nav.id} href={nav.link} className=" text-start block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">{nav.Titulo}</a>  
+     ))}
+            <div className="mr-[5px] ml-[5px] gap-4 items-center hidden sm:flex">
+                    <a className='shadow-xl rounded-full border border-solid border-black/[.08] dark:border-white/[.145]  flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-36 transition delay-200 ease-in-out hover:-translate-y-1' href="#">Sing In</a>
+                    <a className='shadow-xl rounded-full border border-solid border-transparent flex items-center justify-center bg-foreground text-black/[.80] gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-40 transition delay-200 ease-in-out hover:-translate-y-1' href="#">Sing Up</a>
+                </div>
     </div>
   </div>
         </nav>
