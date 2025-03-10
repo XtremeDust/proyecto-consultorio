@@ -13,7 +13,7 @@ const nav = [{
 
 }, {
     id: "3",
-    Titulo: "Agendar Cita",
+    Titulo: "Citas",
     link: "/#consulta"
 }, {
     id: "4",
@@ -23,13 +23,13 @@ const nav = [{
 
 const buttones = [{
     id: "1",
-    nombre: "Sign In",
-    link: "/login",
+    nombre: "Hacer una Cita",
+    link: "/consulta",
 },
 {
     id: "2",
-    nombre: "Sign Up",
-    link: "/register",
+    nombre: "Soy doctor",
+    link: "/login",
 }
 ]
 
@@ -90,8 +90,8 @@ export default function navbar() {
                     {/*resgistro y inicio */}
                     <div className="hidden items-center gap-4 md:flex">
                         <ul className='font-semibold flex flex-col p-4 md:flex-row md:space-x-8 md:mt-0 md:border-0'>
-                            <li><Link className='flex items-center justify-center px-4 py-2 text-sm transition-transform duration-200 ease-in-out border  border-solid border-black/[.08] dark:border-white/[.145] hover:bg-[#f2f2f2] hover:dark:bg-emerald-950  bg-transparent  gap-2 rounded-full shadow-xl sm:px-5 sm:h-12 sm:text-base sm:min-w-[10rem] hover:-translate-y-1' href="/login">Sing In</Link></li>
-                            <li><Link className='flex items-center justify-center px-4 py-2 text-sm transition-transform duration-200 ease-in-out text-black/[0.80] bg-foreground gap-2 rounded-full shadow-xl sm:px-5 sm:h-12 sm:text-base sm:min-w-[10rem] hover:bg-gray-600 dark:hover:bg-gray-300 hover:-translate-y-1' href="/register">Sing Up</Link></li>
+                            <li><Link className='flex items-center justify-center px-4 py-2 text-sm transition-transform duration-200 ease-in-out border  border-solid border-black/[.08] dark:border-white/[.145] hover:bg-[#f2f2f2] hover:dark:bg-emerald-950  bg-transparent  gap-2 rounded-full shadow-xl sm:px-5 sm:h-12 sm:text-base sm:min-w-[10rem] hover:-translate-y-1' href="/consulta">Hacer una cita</Link></li>
+                            <li><Link className='flex items-center justify-center px-4 py-2 text-sm transition-transform duration-200 ease-in-out text-black/[0.80] bg-foreground gap-2 rounded-full shadow-xl sm:px-5 sm:h-12 sm:text-base sm:min-w-[10rem] hover:bg-gray-600 dark:hover:bg-gray-300 hover:-translate-y-1' href="/login">Soy doctor</Link></li>
                         </ul>
                     </div>
                 </div>
