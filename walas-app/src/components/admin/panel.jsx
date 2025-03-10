@@ -1,20 +1,22 @@
-import React from 'react'
+"use client";
+import Ingresos from '@/components/admin/elementos';
+import Gestion from '@/components/admin/gestion'
 
-function panel() {
+function Panel() {
 
   return (
   
 
     <div>
-      <section className="px-8 py-4">
-
+      <section>
+        <Ingresos></Ingresos>
       </section>
 
       <section>
-        
+        <Gestion></Gestion>
       </section>
     </div>
   )
 }
 
-export default panel
+export default Panel

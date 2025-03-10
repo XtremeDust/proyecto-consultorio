@@ -19,13 +19,6 @@ const nav = [
     },
     {
         id: "3",
-        Titulo: "Perfil",
-        Link: "/admin/profile",
-        image: "/admin/usuario.png",
-        imgNom: "user",
-    },
-    {
-        id: "4",
         Titulo: "Salir",
         Link: "/",
         image: "/admin/cerrar-sesion.png",
@@ -108,7 +101,7 @@ function navbar() {
                 id="desplegable-menu"
             >
                 {nav.map((item) => (
-                    <a key={item.id} href={item.Link} className={`block px-3 py-2 text-base font-medium text-gray-900 bg-slate-200 hover:dark:bg-emerald-950 hover:text-white rounded-md "`}>
+                    <a key={item.id} href={item.Link} className={`block px-3 py-2 text-base font-medium text-gray-900 bg-slate-200 hover:dark:bg-emerald-500 hover:text-white rounded-md "`}>
                         {item.Titulo}
                     </a>
                 ))}
