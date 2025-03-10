@@ -13,7 +13,7 @@ function sesion() {
                         <input type="password" className='my-3 p-2 w-[325px] text-black rounded-xl border border-gray-300 focus:outline-none focus:border-blue-500 focus:shadow-md' name="contra" id="contraseña" placeholder='contraseña' />
                         <input type="submit" className='my-3 p-2 mt-7 w-[200px] bg-blue-900 text-white rounded-xl cursor-pointer' value="Iniciar sesion" />
                     </form>
-                    <p className='mt-3 text-black'>¿No tienes cuenta? <a href="#" className='text-blue-800'>Regístrate aquí</a></p>
+                    <p className='mt-3 text-black'>¿No tienes cuenta? <a href="/register/" className='text-blue-800'>Regístrate aquí</a></p>
                     
                 </div>
     

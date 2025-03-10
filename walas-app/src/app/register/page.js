@@ -6,11 +6,11 @@ import Registro from "@/components/register/registro"
 export default function register() {
   return (
     <div className="grid min-h-screen grid-rows-[auto,1fr,auto]">
-      <Nav/>
-      <main className='content-center'>
-      <div className='py-16 sm:py-16 mx-10'>
+      <Nav className="fixed top-0 left-0 w-full z-50 bg-emerald-900 border-b shadow-md" />
+
+      <div className="h-[80px] md:h-32 lg:h-32 xl:h-[80px]" />
+      <main className="flex-grow flex items-center justify-center">
         <Registro/>
-        </div>
       </main>
       <Footer/>
     </div>

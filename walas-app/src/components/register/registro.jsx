@@ -24,7 +24,7 @@ function registro() {
             <input className='my-3 p-2 w-[200px] bg-blue-900 rounded-xl' type="submit" value="Registarse" />
         </form>
             
-            <p className='text-black'>¿Tienes cuenta? <a href="#" className='text-blue-800 cursor-pointer'>Inicia aqui</a></p>
+            <p className='text-black'>¿Tienes cuenta? <a href="/login/" className='text-blue-800 cursor-pointer'>Inicia aqui</a></p>
 
         </div>
 

@@ -10,7 +10,7 @@ function consultas() {
                     <h3 className='text-4xl font-semibold tracking-tight text-pretty 2xl:text-justify lg:text-center text-gray-900 sm:text-5xl'>Clínica veterinaria en Línea</h3>
                     <p className=' text-gray-600 my-3 xl:text-justify sm:mx-20 sm:text-center text-2xl tracking-tight font-semibold '>Reserva consultas con médicos expertos desde la comodidad de tu hogar</p>
                     <div className='flex items-center justify-center'>
-                    <Link  className='shadow-sm rounded-full border border-solid border-transparent flex items-center justify-center bg-foreground dark:bg-green-900 gap-2 dark:hover:bg-[#5eb66a] text-lg sm:text-base h-30 sm:h-12 px-4 sm:px-5 sm:min-w-40 ' href="/consulta">Haz tu Cita</Link>
+                    <Link  className='shadow-sm rounded-full border border-solid border-transparent flex items-center justify-center hover:shadow-sm transition-transform duration-200 ease-in-out dark:bg-emerald-900 gap-2 hover:dark:bg-emerald-950 hover:-translate-y-1 text-lg sm:text-base h-30 sm:h-12 px-4 sm:px-5 sm:min-w-40 ' href="/consulta">Haz tu Cita</Link>
                     </div>
                     
                 </div>

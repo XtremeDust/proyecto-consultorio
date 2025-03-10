@@ -4,17 +4,17 @@ import Calendario from "./fecha";
 
 
 const hora = [
-  {title: '08:00 am', id: 1,},
-  {title: '09:00 am', id: 2,},
-  {title: '10:00 am', id: 3,},
-  {title: '11:00 am', id: 4,},
-  {title: '12:00 am', id: 5,},
-  {title: '01:00 pm', id: 6,},
-  {title: '02:00 pm', id: 7,},
-  {title: '03:00 pm', id: 8,},
-  {title: '04:00 pm', id: 9,},
-  {title: '05:00 pm', id: 10,},
-  {title: '06:00 pm', id: 11,},
+  {title: '08:00 am', id: 1,  status: true },
+  {title: '09:00 am', id: 2,  status: false },
+  {title: '10:00 am', id: 3,  status: true},
+  {title: '11:00 am', id: 4,  status: false},
+  {title: '12:00 am', id: 5,  status: true},
+  {title: '01:00 pm', id: 6,  status: true},
+  {title: '02:00 pm', id: 7,  status: true},
+  {title: '03:00 pm', id: 8,  status: false},
+  {title: '04:00 pm', id: 9,  status: true},
+  {title: '05:00 pm', id: 10, status: false},
+  {title: '06:00 pm', id: 11, status: false},
 ]
 
 const telf=[
@@ -83,7 +83,14 @@ function consulta() {
           <div className='horas grid grid-cols-4 m-3'>
 
           {hora.map((hora)=>(
-            <button type='button' key={hora.id} className='text-white border m-2 p-3 rounded-lg bg-green-800 hover:shadow-sm transition delay-75 ease-in-out hover:-translate-y-1 ' onClick={() => setSelectH(hora.title)}>
+            <button type='button' key={hora.id} className='text-white border m-2 p-3 rounded-lg hover:shadow-sm transition delay-75 ease-in-out hover:-translate-y-1 '
+            onClick={() => setSelectH(hora.title)} 
+            disabled={!hora.status} // este solo los deja de seleccionar disabled={!hora.status}   //este elimina los false hidden={!hora.status}
+            style={{
+              backgroundColor: selecionaH === hora.title  ? '#14522D' : 'gray',
+              color: 'white',
+            }}
+            >
                         {hora.title}
             </button>
           ))}
