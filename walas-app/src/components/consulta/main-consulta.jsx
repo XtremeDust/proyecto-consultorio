@@ -29,67 +29,63 @@ function consulta() {
 
   return (
     <div className=' justify-center items-center p-5'>
-      <div className='bg-slate-200 text-black mx-auto max-w-screen-xl p-6 m-5 lg:px-8 sm:flex-col sm:flex sm:justify-center rounded-3xl shadow-md'>
+      <div className='bg-slate-100 text-black mx-auto max-w-screen-xl p-6 m-5 lg:px-8 sm:flex-col sm:flex sm:justify-center rounded-3xl shadow-md'>
         <h2 className='text-4xl font-semibold tracking-tight text-pretty  text-center text-gray-900 sm:text-4xl'>Reserva tu consulta</h2>
 
 
         <form action="" className='flex flex-col items-center justify-center my-4'>
 
-          <div className='datos m-5 flex flex-col gap-2'>
-            <h3 className='text-3xl lg:text-justify font-semibold tracking-tight text-pretty text-center text-gray-900 sm:text-3xl'>Datos personales</h3>
-            <section className='datos  flex flex-col gap-2 items-center lg:flex-row'>
 
-              <div>
-                <div className='correo'>
-                  <label htmlFor="name">Nombre: </label>
-                  <input type="text" name="name" id="name" className='my-2 p-2' placeholder='Jorge' />
-                </div>
+          <h3 className='text-3xl lg:text-justify font-semibold tracking-tight text-pretty text-center text-gray-900 sm:text-3xl'>Datos personales</h3>
 
-                <div className='correo'>
-                  <label htmlFor="email">Apellido: </label>
-                  <input type="text" name="Apellido" id="Apellido" className='my-2 p-2' placeholder='Silva' />
-                </div>
-              </div>
-
-              <div>
-                <div className='correo'>
-                  <label htmlFor="email">Correo electronico: </label>
-                  <input type="email" name="email" id="email" className='my-2 p-2' placeholder='email@gmail.com' />
-                </div>
-
-                <div className='numero'>
-                  <label htmlFor="tfl">Numero de Telefono: </label>
-                  <select name="options" id="options" className=' bg-cyan-200 m-2 p-1.5 '>
-                    {telf.map((telf) => (
-                      <option key={telf.id} value={telf.tfn}>{telf.tfn}</option>
-                    ))}
-                  </select>
-                  <input type="tel" name="tlf" id="tfl" className='m-2 p-1 w-[100px]  bg-cyan-200 ' placeholder='1541562' />
-                </div>
-
-              </div>
-            </section>
-
-
+          <div className="w-[55%] my-5 max-w-sm min-w-[200px]">
+            <input type='text' name='nom' className="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease hover:bg-neutral-100 focus:outline-none focus:border-teal-500 hover:border-teal-300 shadow-sm focus:shadow focus:bg-neutral-100" placeholder="Nombre" />
           </div>
 
-          <section className='tipo m-5'>
+          <div className="w-[55%] max-w-sm min-w-[200px]">
+            <input type='text' name='ape' className="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease hover:bg-neutral-100 focus:outline-none focus:border-teal-500 hover:border-teal-300 shadow-sm focus:shadow focus:bg-neutral-100" placeholder="Apellido" />
+          </div>
 
-            <h3 className='text-3xl font-semibold tracking-tight text-pretty lg:text-justify text-center text-gray-900 sm:text-3xl'>Servicios</h3>
-            
-            <div className='text-center my-3'>
-            <label htmlFor='opt'>Seleccione el tipo de servicio a reservar: </label >
-            <select name="options" id="options" className=' bg-cyan-100 m-2 p-2 '>
+          <div className="w-[55%] my-5 max-w-sm min-w-[200px]">
+            <input type='email' name='ema' className="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease hover:bg-neutral-100 focus:outline-none focus:border-teal-500 hover:border-teal-300 shadow-sm focus:shadow focus:bg-neutral-100" placeholder="Email" />
+          </div>
+
+          <div className="w-[55%] max-w-sm min-w-[200px]">
+            <label htmlFor='options' className="block mb-1 text-sm text-slate-600">
+              Numero de Telefono
+            </label>
+            <div className="relative mt-2">
+              <div className="absolute ">
+                <select name="options" id="options" className='bg-transparent p-[7.5px] m-[1px] rounded-md border border-r-slate-300 focus:outline-none focus:border-teal-500 hover:border-teal-300 focus:bg-neutral-100 '>
+                  {telf.map((telf) => (
+                    <option key={telf.id} value={telf.tfn}>{telf.tfn}</option>
+                  ))}
+                </select>
+              </div>
+              <input
+                name="num"
+                type="text"
+                className="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-20  pr-3 py-2 transition duration-300 ease  hover:bg-neutral-100 focus:outline-none focus:border-teal-500 hover:border-teal-300 focus:bg-neutral-100 shadow-sm focus:shadow"
+                placeholder="Numero" />
+            </div>
+          </div>
+
+          <h3 className='text-3xl font-semibold tracking-tight text-pretty lg:text-justify text-center mt-5 text-gray-900 sm:text-3xl'>Servicios</h3>
+
+          <div className="w-[55%] max-w-sm min-w-[200px]  my-5">
+            <label htmlFor='opt' className="block mb-1 text-sm text-slate-600">
+              Seleccione el tipo de servicio a reservar
+            </label>
+
+            <select name="opt" id="opt" className="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease hover:bg-neutral-100 focus:outline-none focus:border-teal-500 hover:border-teal-300 shadow-sm focus:shadow focus:bg-neutral-100">
               <option value="Selecciona un servicio">Selecciona un servicio</option>
               <option value="Consulta general">Consulta general</option>
               <option value="Consulta Dental">Consulta Dental</option>
               <option value="Peluquería Canina y Felina">Peluquería Canina y Felina</option>
             </select>
-            </div>
+          </div>
 
-          </section>
-
-          <h3 className='text-3xl font-semibold tracking-tight text-pretty lg:text-justify text-center text-gray-900 sm:text-3xl'>Fecha de la consulta</h3>
+          <h3 className='text-3xl font-semibold tracking-tight text-pretty lg:text-justify text-center text-gray-900 sm:text-3xl mt-2'>Fecha de la consulta</h3>
           <div className='datos consulta flex flex-col items-center lg:flex-row'>
 
             <section className='dia m-2 p-5 '>
@@ -103,17 +99,19 @@ function consulta() {
               <h3 className='text-2xl font-semibold tracking-tight text-pretty text-center text-gray-900 sm:text-2xl'>Hora disponible</h3>
               <div className='horas grid grid-cols-4 m-3'>
 
-                {hora.map((hora) => (
-                  <button type='button' key={hora.id} className='text-white border m-2 p-3 rounded-lg hover:shadow-sm transition delay-75 ease-in-out hover:-translate-y-1 '
+                {hora.map((hora, index) => (
+                  <button
+                    type="button"
+                    key={hora.id}
+                    id={index}
+                    className={`text-white border m-2 p-3 rounded-lg hover:shadow-sm transition delay-75 ease-in-out hover:-translate-y-1 ${selecionaH === hora.title ? "bg-green-900" : "bg-slate-600"
+                      }`}
                     onClick={() => setSelectH(hora.title)}
-                    disabled={!hora.status} // este solo los deja de seleccionar disabled={!hora.status}   //este elimina los false hidden={!hora.status}
-                    style={{
-                      backgroundColor: selecionaH === hora.title ? '#14522D' : 'gray',
-                      color: 'white',
-                    }}
+                    hidden={!hora.status}
                   >
                     {hora.title}
                   </button>
+
                 ))}
               </div>
 
@@ -136,3 +134,4 @@ function consulta() {
 }
 
 export default consulta
+

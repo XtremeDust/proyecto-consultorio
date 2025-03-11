@@ -18,6 +18,7 @@ export function Fecha() {
           selected: `bg-green-500 text-white`, // Highlight the selected day
           root: `${defaultClassNames.root} shadow-lg p-5`, // Add a shadow to the root element
           chevron: `${defaultClassNames.chevron} fill-amber-500`, // Change the color of the chevron
+      
         }}
         selected={selected}
         onSelect={setSelected}

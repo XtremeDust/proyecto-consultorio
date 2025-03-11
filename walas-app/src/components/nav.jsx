@@ -68,9 +68,10 @@ export default function navbar() {
                 <div className="flex items-center">
                     {/* Botón despliegue */}
                     <button onClick={menu} // Controla el estado del menú desplegable
-                        className="flex items-center p-2 rounded-3xl cursor-pointer group md:hidden"
-                        aria-expanded={abrir} // Accesibilidad para indicar el estado del menú
+                        className="flex text-transparent items-center p-2 rounded-3xl cursor-pointer group md:hidden"
+                         aria-expanded={abrir} // Accesibilidad para indicar el estado del menú
                     >
+                        s
                         <div className="space-y-2">
                             <span
                                 className={`block w-10 h-1 bg-white rounded-full transition-transform duration-300 ease-in-out ${abrir ? "translate-y-[18px] rotate-45" : ""
