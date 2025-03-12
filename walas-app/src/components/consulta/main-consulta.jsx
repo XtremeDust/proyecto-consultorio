@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
-import Calendario from "./fecha";
+import Calendario from "./Fecha";
+//import Hora from './hora';
 
 
 const hora = [
@@ -94,6 +95,8 @@ function consulta() {
                 <Calendario></Calendario>
               </div>
             </section>
+
+
 
             <section className='hora m-2 '>
               <h3 className='text-2xl font-semibold tracking-tight text-pretty text-center text-gray-900 sm:text-2xl'>Hora disponible</h3>
