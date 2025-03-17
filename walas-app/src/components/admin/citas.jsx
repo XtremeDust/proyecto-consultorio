@@ -47,13 +47,13 @@ function citas() {
 
                     <tbody>
                         {consulta.map((data) => (
-                            <tr className="bg-white border-b text-center text-black dark:bg-gray-200 dark:border-gray-100 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-300" key={data.id}>
+                            <tr className="bg-white border-b border-x-2 text-center text-black dark:bg-gray-200 dark:border-gray-100 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-300" key={data.id}>
                                 <td>{data.id}</td>
-                                <td>{data.Cliente}</td>
-                                <td>{data.Doctor}</td>
+                                <td>{data.cliente.user.name} {data.cliente.user.last_name}</td>
+                                <td className="p-5">{data.doctor.user.name} {data.doctor.user.last_name}</td>
                                 <td>{data.consulta.servicio}</td>
-                                <td>{data.fecha.day}</td>
-                                <td>{data.hora.hour}</td>
+                                <td className="p-5">{data.fecha.day}</td>
+                                <td>{data.fecha.hora.hour}</td>
                                 <td>{data.estado.Estado}</td>
                                 <td className="px-6 py-4"><button className='text-white bg-red-500 p-1 rounded-md transition delay-75 ease-in-out hover:-translate-y-1'
                                     style={{

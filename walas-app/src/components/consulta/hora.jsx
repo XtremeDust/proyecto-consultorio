@@ -1,13 +1,22 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
-function hora() {
- const [error, setError] = useState(null);
+const convertirHora = (hora24) => {
+  const [horas, minutos] = hora24.split(":"); // Divide la cadena en horas y minutos
+  const hora = parseInt(horas); // Convierte las horas a número
+  const periodo = hora >= 12 ? "PM" : "AM"; // Determina si es AM o PM
+  const hora12 = hora % 12 || 12; // Convierte las horas al formato de 12 horas (0 se convierte a 12)
+  return `${hora12}:${minutos} ${periodo}`; // Devuelve la hora en formato AM/PM
+};
+
+function hora({ onSeleccionarHora }) {
+  const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [users, setUsers] = useState([]);
+  const [hora, setUsers] = useState([]);
+  const [selecionaH, setSelectH] = React.useState(null);
 
   useEffect(() => {
-    fetch("http://localhost/api/user")
+    fetch("http://localhost/api/horas")
       .then((res) => res.json())
       .then(
         (result) => {
@@ -27,35 +36,36 @@ function hora() {
     return <div>Loading...</div>;
   } else {
     return (
-      <div>
-            <table className='w-full min-w-max table-auto text-center'>
-            <thead className='text-md text-white bg-gray-100 dark:bg-emerald-950 '>
-                    <tr>
-                        {col.map((fila, index) => (
-                            <th key={index} scope="col" className="px-6 py-3"
-                                variant='small'
-                                color='blue-gray' >
 
-                                {fila}
-                            </th>
-                        ))}
-                    </tr>
-                </thead>
+      <div className="horas grid grid-cols-4 m-3 items-center justify-center text-center">
+        {hora.map((data, index) => (
+          <button
+            type="button"
+            key={data.hour}
+            id={index}
+            className={`text-white border m-2 p-3 rounded-lg hover:shadow-sm transition delay-75 ease-in-out hover:-translate-y-1 ${selecionaH === data.hour ? "bg-green-900" : "bg-slate-600"
+              }`}
+            onClick={() =>{ setSelectH(data.hour);
+              onSeleccionarHora(data.hour); 
+            }
+            }
+            hidden={!data.hour}
+          >
+            {convertirHora(data.hour)
+            
+            }
+          </button>
 
-                <tbody>
-                    {users.map((data) => (
-                         <tr className="bg-white border-b text-center text-black dark:bg-gray-200 dark:border-gray-100 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-300" key={data.id}>
-                            <td className="px-6 py-4">{data.id}</td>
-                            <td className="px-6 py-4">{data.name}</td>
-                            <td className="px-6 py-4">{data.last_name}</td>
-                            <td className="px-6 py-4">{data.telefono}</td>
-                            <td className="px-6 py-4">{data.email}</td>
-                        </tr>
-                    ))}
-                </tbody>
+        ))}
 
-            </table>
+        <div className='horaSeleccionada text-center'>
+          {
+          selecionaH ? `Hora seleccionada: ${convertirHora(selecionaH)}` : "Por Favor seleccione la hora."}
         </div>
+
+        
+
+      </div>
     );
   }
 }
